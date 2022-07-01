@@ -1,0 +1,105 @@
+<script>
+  window.global = window;
+</script>
+<style>
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  /* Storybook doc sizing overrides */
+  .docs-story > div {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .docs-story > div > div {
+    height: auto !important;
+    max-height: 300px !important;
+  }
+  .docs-story .innerZoomElementWrapper > div {
+    border: none !important;
+  }
+  .sbdocs-content {
+    max-width: unset !important;
+  }
+  /* Hiding certain control columns from argstable */
+  .hide-controls-column > div > table > thead > tr > th:last-child,
+  .hide-controls-column > div > table > tbody > tr > td:last-child {
+    display: none;
+  }
+
+  .hide-controls-column > div > table > thead > tr th:nth-child(1),
+  .hide-controls-column > div > table > tbody > tr td:nth-child(1) {
+    width: 15%;
+  }
+
+  /* Storybook demo interaction */
+  .clickEffect {
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    /*background: red;*/
+    position: fixed;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: #ffc400d6;
+    border-radius: 50%;
+    animation: clickEffect 1s ease-out;
+    z-index: 99999;
+  }
+
+  @keyframes clickEffect {
+    0% {
+      opacity: 1;
+      width: 0.5em;
+      height: 0.5em;
+      margin: -0.25em;
+      border-width: 0.5em;
+    }
+
+    100% {
+      opacity: 0.2;
+      width: 15em;
+      height: 15em;
+      margin: -7.5em;
+      border-width: 0.03em;
+    }
+  }
+
+  #demoCursor {
+    z-index: 999;
+    transition-duration: 1000ms;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.2, 1);
+    transition-property: top, left;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: -20px 0 0 -20px;
+    background: rgba(0, 0, 0, 0);
+    top: 50%;
+    left: 50%;
+    pointer-events: none !important;
+  }
+
+  #demoCursor.moving {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  #demoCursor.hide {
+    animation: cursorHide 500ms linear;
+  }
+
+  @keyframes cursorHide {
+    0% {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    100% {
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+</style>
