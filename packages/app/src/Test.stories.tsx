@@ -91,6 +91,9 @@ export const Playground: Story = {
     initialValue: '<p>Hello <strong>world</strong> is <u>beautiful</u></p>',
   },
   render: (props) => <Render {...props} />,
+  paramaters: {
+    ts: 'Should complains',
+  },
   play: async ({ canvasElement, globals }) => {
     expect('Begin').toStrictEqual('Begin');
 
