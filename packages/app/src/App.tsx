@@ -2,10 +2,11 @@ import React, {useCallback} from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 //  Typing just for testing with storybook
-export const HelloWorld: React.FC<{ number?: number, string?: string, boolean?: boolean }> = () => (
+export const HelloWorld: React.FC<{ number?: number, string?: string, boolean?: boolean, onClick?: () => void }> = ({ onClick }) => (
   <>
     <h1>Hello world</h1>
-    <Link to='/editor'>Editor</Link>
+    <p><Link to='/editor'>Editor</Link></p>
+    <button onClick={onClick}>Click me</button>
   </>
 );
 

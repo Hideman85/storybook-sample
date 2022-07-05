@@ -91,7 +91,7 @@ export const Playground: Story = {
     initialValue: '<p>Hello <strong>world</strong> is <u>beautiful</u></p>',
   },
   render: (props) => <Render {...props} />,
-  paramaters: {
+  parameters: {
     ts: 'Should complains',
   },
   play: async ({ canvasElement, globals }) => {
